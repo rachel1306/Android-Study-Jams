@@ -15,7 +15,7 @@ class ViewModal (application: Application) :AndroidViewModel(application) {
         val dao = db.getDatabase(application).getNotesDao()
         repository = rep(dao)
         allNotes = repository.allNotes
-    }.
+    }
     fun deleteNote (note: Note) = viewModelScope.launch(Dispatchers.IO) {
         repository.delete(note)
     }
