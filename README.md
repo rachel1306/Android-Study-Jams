@@ -8,11 +8,11 @@ We have developed a note-taking app using simple and basic UI, so that everyone 
 
 ### **Screenshots:**
 
- ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen.jpg?raw=true)      
-  ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/edit screen.jpg?raw=true)    
-   ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/add screen.jpg?raw=true)    
-    ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen on deletion.jpg?raw=true)    
-     ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen after addition.jpg?raw=true)    
+ ![alt text](https://github.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen.jpg?raw=true)      
+  ![alt text](https://github.com/rachel1306/Android-Study-Jams/master/Screenshots/edit_screen.jpg?raw=true)    
+   ![alt text](https://github.com/rachel1306/Android-Study-Jams/master/Screenshots/add_screen.jpg?raw=true)    
+    ![alt text](https://github.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_on_deletion.jpg?raw=true)    
+     ![alt text](https://github.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_after_addition.jpg?raw=true)    
 
 ### **Functionality & Concepts used:**
 1.	LiveData 
