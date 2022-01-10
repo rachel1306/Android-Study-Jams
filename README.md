@@ -7,11 +7,15 @@ Proposed Solution :
 We have developed a note-taking app using simple and basic UI, so that everyone can understand and use it easily. Its features include creating new notes along with a description of what is to be done to complete that particular note. Once you are done using it, it can be deleted to remove it from the application. All notes are shown on the main screen and we can scroll through to find our required note page.
 
 ### **Screenshots:** 
-    ![alt text] (https://github.com/rachel1306/Android-Study-Jams/blob/master/Screenshots/main_screen.png)
-    ![alt text] (https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/add_screen.png)
-    ![alt text] (https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_after_addition.png)
-    ![alt text] (https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/edit_screen.png)
-    ![alt text] (https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_on_deletion.png)
+<img src="https://github.com/rachel1306/Android-Study-Jams/blob/master/Screenshots/main_screen.png" alt="" width="250px"/>
+
+<img src="https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/add_screen.png" alt="" width="250px"/>
+
+<img src="https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_after_addition.png" alt="" width="250px"/>
+
+<img src="https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/edit_screen.png" alt="" width="250px"/>
+
+<img src="https://raw.githubusercontent.com/rachel1306/Android-Study-Jams/master/Screenshots/main_screen_on_deletion.png" alt="" width="250px"/>
 
 ### **Functionality & Concepts used:**
 1.	LiveData 
