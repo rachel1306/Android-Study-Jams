@@ -9,8 +9,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.R
+import com.example.notes.ViewModal
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import java.util.*
 
 class MainActivity : AppCompatActivity(), NoteClickInterface, NoteClickDeleteInterface {
     lateinit var viewModal: ViewModal

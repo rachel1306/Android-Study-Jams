@@ -4,31 +4,29 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.notes.R
+import com.example.notes.ViewModal
+import com.example.notes.ViewModalFactory
 import com.example.notes.databinding.EditBinding
 import com.gtappdevelopers.noteapplication.Note
-import com.gtappdevelopers.noteapplication.ViewModal
 import java.text.SimpleDateFormat
 import java.util.*
 
 class AddFragment : Fragment(R.layout.edit) {
     private val args by navArgs<AddFragmentArgs>()
 
-    lateinit var viewModal: ViewModal
-    var noteID = -1;
-    private val binding by lazy(LazyThreadSafetyMode.NONE) {
-        EditBinding.bind(requireView())
+    val viewModal by activityViewModels<ViewModal> {
+        ViewModalFactory(requireContext().applicationContext)
     }
+    var noteID = -1;
 
+    private lateinit var binding: EditBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModal = ViewModelProvider(
-            this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
-        ).get(ViewModal::class.java)
-
+        binding = EditBinding.bind(requireView())
         if (args.isEdit) {
             val noteTitle = args.todo?.noteTitle
             val noteDescription = args.todo?.noteDescription
@@ -69,6 +67,7 @@ class AddFragment : Fragment(R.layout.edit) {
                     Toast.makeText(requireContext(), "$noteTitle Added", Toast.LENGTH_LONG).show()
                 }
             }
+            findNavController().popBackStack()
         }
     }
 }
