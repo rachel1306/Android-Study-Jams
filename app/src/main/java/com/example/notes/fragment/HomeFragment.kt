@@ -52,31 +52,8 @@ class HomeFragment : Fragment(R.layout.activity_main), NoteClickDeleteInterface,
                 )
             )
         }
-        setHasOptionsMenu(true)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.search, menu)
-
-        val searchItem = menu.findItem(R.id.search)
-        searchView = searchItem.actionView as SearchView
-        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query.isNullOrBlank()) {
-                    Toast.makeText(requireContext(), "Empty Query", Toast.LENGTH_LONG).show()
-                }
-                viewModal.onQueryChange(query)
-                return true
-
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                return true
-            }
-
-        })
-
-    }
 
     override fun onNoteClick(note: Note) {
         findNavController().navigate(
