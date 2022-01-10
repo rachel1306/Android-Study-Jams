@@ -8,7 +8,11 @@ We have developed a note-taking app using simple and basic UI, so that everyone 
 
 ### **Screenshots:**
 
-           
+ ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen.jpg?raw=true)      
+  ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/edit screen.jpg?raw=true)    
+   ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/add screen.jpg?raw=true)    
+    ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen on deletion.jpg?raw=true)    
+     ![alt text](https://github.com/rachel1306/Android-Study-Jams/blob/master/main screen after addition.jpg?raw=true)    
 
 ### **Functionality & Concepts used:**
 1.	LiveData 
