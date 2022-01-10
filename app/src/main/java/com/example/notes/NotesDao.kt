@@ -2,6 +2,8 @@ package com.gtappdevelopers.noteapplication
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import kotlinx.coroutines.flow.Flow
+
 @Dao
 interface NotesDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -11,7 +13,7 @@ interface NotesDao {
     suspend fun delete(note: Note)
 
     @Query("Select * from notesTable order by id ASC")
-    fun getAllNotes(): LiveData<List<Note>>
+    fun getAllNotes(): Flow<List<Note>>
 
     @Update
     suspend fun update(note: Note)

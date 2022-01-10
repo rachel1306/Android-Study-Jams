@@ -8,38 +8,53 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.notes.R
+import com.example.notes.TodoAdapter
 import com.example.notes.databinding.ActivityMainBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.gtappdevelopers.noteapplication.*
+import com.gtappdevelopers.noteapplication.Note
+import com.gtappdevelopers.noteapplication.NoteClickDeleteInterface
+import com.gtappdevelopers.noteapplication.NoteClickInterface
+import com.gtappdevelopers.noteapplication.ViewModal
 
-class HomeFragment: Fragment(R.layout.activity_main), NoteClickDeleteInterface, NoteClickInterface {
+class HomeFragment : Fragment(R.layout.activity_main), NoteClickDeleteInterface,
+    NoteClickInterface {
     lateinit var viewModal: ViewModal
-    lateinit var notesRV: RecyclerView
     lateinit var addFAB: FloatingActionButton
 
-    val binding  by lazy{ ActivityMainBinding.bind(requireView())}
+    val binding by lazy { ActivityMainBinding.bind(requireView()) }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        notesRV.layoutManager = LinearLayoutManager(requireContext())
-        val noteRVAdapter = NoteRVAdapter(requireContext(), this, this)
-        notesRV.adapter = noteRVAdapter
+        binding.notesRV.layoutManager = LinearLayoutManager(requireContext())
+        val noteRVAdapter = TodoAdapter({
+            onNoteClick(it)
+        }, {
+            onDeleteIconClick(it)
+        })
+        binding.notesRV.adapter = noteRVAdapter
         viewModal = ViewModelProvider(
-                this,
-                ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+            this,
+            ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
         ).get(ViewModal::class.java)
         viewModal.allNotes.observe(viewLifecycleOwner, Observer { list ->
-            list?.let {
-                noteRVAdapter.updateList(it)
-            }
+            noteRVAdapter.submitList(list)
         })
-        addFAB.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddFragment2(false))
+        binding.idFAB.setOnClickListener {
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToAddFragment2(
+                    false
+                )
+            )
         }
     }
+
     override fun onNoteClick(note: Note) {
-        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddFragment2(true, note))
+        findNavController().navigate(
+            HomeFragmentDirections.actionHomeFragmentToAddFragment2(
+                true,
+                note
+            )
+        )
     }
 
     override fun onDeleteIconClick(note: Note) {

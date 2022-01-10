@@ -3,7 +3,7 @@ package com.gtappdevelopers.noteapplication
 import androidx.lifecycle.LiveData
 
 class rep(private val notesDao: NotesDao) {
-    val allNotes: LiveData<List<Note>> = notesDao.getAllNotes()
+    val allNotes = notesDao.getAllNotes()
 
     suspend fun insert(note: Note) {
         notesDao.insert(note)
