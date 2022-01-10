@@ -1,15 +1,12 @@
 package com.gtappdevelopers.noteapplication
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.notes.R
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.notes.ViewModal
 
 class Edit : AppCompatActivity() {
     lateinit var noteTitleEdt: EditText
@@ -41,29 +38,29 @@ class Edit : AppCompatActivity() {
             saveBtn.setText("Save Note")
         }
 
-        saveBtn.setOnClickListener {
-            val noteTitle = noteTitleEdt.text.toString()
-            val noteDescription = noteEdt.text.toString()
-            if (noteType.equals("Edit")) {
-                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
-                    val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                    val currentDateAndTime: String = sdf.format(Date())
-                    val updatedNote = Note(noteTitle, noteDescription, currentDateAndTime)
-                    updatedNote.id = noteID
-                    viewModal.updateNote(updatedNote)
-                    Toast.makeText(this, "Note Updated..", Toast.LENGTH_LONG).show()
-                }
-            } else {
-                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
-                    val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
-                    val currentDateAndTime: String = sdf.format(Date())
-                    viewModal.addNote(Note(noteTitle, noteDescription, currentDateAndTime))
-                    Toast.makeText(this, "$noteTitle Added", Toast.LENGTH_LONG).show()
-                }
-            }
-            startActivity(Intent(applicationContext, MainActivity::class.java))
-            this.finish()
-        }
+//        saveBtn.setOnClickListener {
+//            val noteTitle = noteTitleEdt.text.toString()
+//            val noteDescription = noteEdt.text.toString()
+//            if (noteType.equals("Edit")) {
+//                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
+//                    val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
+//                    val currentDateAndTime: String = sdf.format(Date())
+//                    val updatedNote = Note(noteTitle, noteDescription, currentDateAndTime)
+//                    updatedNote.id = noteID
+//                    viewModal.updateNote(updatedNote)
+//                    Toast.makeText(this, "Note Updated..", Toast.LENGTH_LONG).show()
+//                }
+//            } else {
+//                if (noteTitle.isNotEmpty() && noteDescription.isNotEmpty()) {
+//                    val sdf = SimpleDateFormat("dd MMM, yyyy - HH:mm")
+//                    val currentDateAndTime: String = sdf.format(Date())
+//                    viewModal.addNote(Note(noteTitle, noteDescription, currentDateAndTime))
+//                    Toast.makeText(this, "$noteTitle Added", Toast.LENGTH_LONG).show()
+//                }
+//            }
+//            startActivity(Intent(applicationContext, MainActivity::class.java))
+//            this.finish()
+//        }
     }
 }
 
