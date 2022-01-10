@@ -8,6 +8,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.notes.R
+import com.example.notes.TempActivity
 import com.example.notes.ViewModal
 import com.example.notes.ViewModalFactory
 import com.example.notes.databinding.EditBinding
@@ -32,6 +33,7 @@ class AddFragment : Fragment(R.layout.edit) {
             val noteDescription = args.todo?.noteDescription
             noteID = args.todo?.id ?: -1
             binding.save.setText("Update Note")
+            (activity as TempActivity).supportActionBar?.title = "Edit Note"
             binding.title.setText(noteTitle)
             binding.desc.setText(noteDescription)
         } else {

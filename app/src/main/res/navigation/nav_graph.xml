@@ -14,15 +14,15 @@
     <fragment
         android:id="@+id/addFragment"
         android:name="com.example.notes.fragment.AddFragment"
-        android:label="AddFragment" >
+        android:label="Add Note">
         <argument
             android:name="isEdit"
-            app:argType="boolean"
-            android:defaultValue="false" />
+            android:defaultValue="false"
+            app:argType="boolean" />
         <argument
             android:name="todo"
+            android:defaultValue="@null"
             app:argType="com.gtappdevelopers.noteapplication.Note"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
 </navigation>
