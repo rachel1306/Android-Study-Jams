@@ -8,11 +8,11 @@ We have developed a note-taking app using simple and basic UI, so that everyone 
 
 ### **Screenshots:** 
      
-     <img width="200" height="433" src="./screenshots/main_screen.jpg">
-     <img width="200" height="433" src="./screenshots/add_screen.jpg">
-     <img width="200" height="433" src="./screenshots/main_screen_after_addition.jpg">
-     <img width="200" height="433" src="./screenshots/edit_screen.jpg">
-     <img width="200" height="433" src="./screenshots/main_screen_on_deletion.jpg">
+     <img width="200" height="433" src="./Screenshots/main_screen.jpg">
+     <img width="200" height="433" src="./Screenshots/add_screen.jpg">
+     <img width="200" height="433" src="./Screenshots/main_screen_after_addition.jpg">
+     <img width="200" height="433" src="./Screenshots/edit_screen.jpg">
+     <img width="200" height="433" src="./Screenshots/main_screen_on_deletion.jpg">
 
 ### **Functionality & Concepts used:**
 1.	LiveData 
